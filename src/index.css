@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Inter:wght@500;600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.logo{
+    @apply font-cour text-4xl 
+}
+.primary-container{
+    @apply px-[7vw] py-[2vh];
+}
+.primary-container-top{
+    @apply px-[7vw];
+}
+.base-container{
+    @apply px-[7vw] py-[10vh];
+}
+.large-container{
+    @apply px-[15vw] py-[20vh];
+}
+.flx-row{
+    @apply flex flex-row items-center
+}
+.flx-col{
+    @apply flex flex-col 
+}
+.footer{
+    @apply  py-[3vh] justify-between gap-10 items-center  flex md:flex-row flx-col 
+}
+li{
+    list-style-type: none;
+}
+.primary-btn{
+    @apply flx-row justify-center rounded-full  py-2 bg-primary text-white
+ }
+.primary-btn-sqr{
+    @apply flx-row justify-center rounded-md  py-2 bg-primary text-white
+ }
+.primary-btn-light{
+   @apply flx-row justify-center rounded-full  py-2 bg-light text-theme
+}
+
+.base-container ::-webkit-scrollbar{
+    display: none;
+}
+.category:hover #category_drop{
+    display: block;
+}
+input{
+    outline: none;
+}
+.sticky-filter {
+    position: sticky;
+     /* Adjust this value as needed to match your design */
+    width: 250px; /* Set the desired width for the filter section */
+    z-index: 1; /* Ensure the filter section appears above content */
+}
+.popup-window{
+    @apply w-screen h-screen bg-slate-50 bg-opacity-30 fixed z-30 justify-center items-center flex flex-row top-0 left-0
+}
