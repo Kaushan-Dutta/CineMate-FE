@@ -15,7 +15,7 @@ const UserProvider = ({children}) => {
         if(user && isAuthenticated){
             try{
                 //console.log(user);
-                const getProfile=await axios.post('http://localhost:5000/user/auth',user);
+                const getProfile=await axios.post('https://cine-mate-be.vercel.app/user/auth',user);
                 //console.log(getProfile.data.data[0]);
                 setProfile(getProfile.data.data[0]);
             }
