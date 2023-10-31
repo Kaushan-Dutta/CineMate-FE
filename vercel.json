@@ -1,0 +1,36 @@
+{
+    "routes": [
+        {
+            "src": "/",
+            "dest": "/"
+        },
+        {
+            "src": "/pricing",
+            "dest": "/"
+        },
+        {
+            "src": "/search",
+            "dest": "/"
+        },
+        {
+            "src": "/search/:id",
+            "dest": "/"
+        },
+        {
+            "src": "/:username",
+            "dest": "/"
+        },
+        {
+            "src": "/:username/downloads",
+            "dest": "/"
+        },
+        {
+            "src": "/:username/favourites",
+            "dest": "/"
+        },
+        {
+            "src": "/:username/collection",
+            "dest": "/"
+        }
+    ]
+}
