@@ -22,7 +22,7 @@ const Landing = () => {
 
           </div>
         </section>
-        <section className='base-container flx-col gap-5'>
+        {/* <section className='base-container flx-col gap-5'>
           <p className='text-3xl text-[#424242] '>UNLOCK YOUR INNER <span className='text-shade2'>CREATOR</span></p>
           <p className='text-xl text-[#777777]'>Get the inspiration you need with these collections carefully selected to boost your project’s engagement.</p>
           <div className='flx-row justify-between overflow-hidden overflow-x-auto space-x-10 my-10'>
@@ -33,7 +33,7 @@ const Landing = () => {
               </div>
             ))}
           </div>
-        </section>
+        </section> */}
         <section className='primary-container flx-col gap-5 text-center'>
           <p className='text-3xl text-[#424242]'>THE <span className='text-primary'>SMARTEST CHOICE</span> FOR CREATIVES LIKE YOU</p>
           <p className='text-xl text-[#777777]'>Whether you’re looking for designs or photographs, you’ll find the perfect asset on Freepik.</p>
@@ -47,7 +47,7 @@ const Landing = () => {
             ))}
           </div>
         </section>
-        <section className='primary-container flx-col gap-5'>
+        {/* <section className='primary-container flx-col gap-5'>
           <p className='text-3xl text-[#424242] '>UNLOCK YOUR INNER <span className='text-shade2'>CREATOR</span></p>
           <p className='text-xl text-[#777777]'>Get the inspiration you need with these collections carefully selected to boost your project’s engagement.</p>
           <div className='grid grid-cols-2 md:grid-cols-4  gap-5 my-10'>
@@ -55,7 +55,7 @@ const Landing = () => {
               <video autoPlay muted loop className={obj.className} key={id}><source src={obj.video} type="video/mp4" /></video>
             ))}
           </div>
-        </section>
+        </section> */}
         <section className='base-container '>
           <div className=' bg-light rounded-3xl flx-row flex-wrap justify-between md:p-20 p-5'>
             <div className='md:w-full lg:w-2/5 text-left flx-col gap-5 my-5'>
