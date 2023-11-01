@@ -75,7 +75,7 @@ const Navbar = () => {
 
                         <div id="category_drop" className=' uppercase hidden absolute translate-y-8 bg-light text-black text-left w-[200px] px-5 rounded-sm ' >
                           {Categories.map((item,index)=>(
-                          <Link to={item.path} key={index} className='p-2  hover:text-primary'>
+                          <Link to={`/search/?type=${item.query}`} key={index} className='p-2  hover:text-primary'>
                             <li className='flx-row'>{item.icon}&nbsp;&nbsp;{item.name}</li>
                           </Link>
                         ))}

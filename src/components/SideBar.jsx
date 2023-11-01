@@ -26,7 +26,7 @@ const SideBar = ({sidebar,openSidebar}) => {
 
                                     <div className=' text-left w-[150px] px-5 rounded-md' id="dropdown">
                                         {Categories.map((item,index)=>(
-                                            <Link to={item.path} key={index} className='p-2 rounded-md hover:text-primary '>
+                                            <Link to={`/search/?type=${item.query}`} key={index} className='p-2 rounded-md hover:text-primary '>
                                                 <li className='flx-row'>{item.icon}&nbsp;&nbsp;{item.name}</li>
                                             </Link>
                                         ))}

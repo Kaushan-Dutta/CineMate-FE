@@ -6,7 +6,7 @@ import { Filters } from '../Static';
 const Filter = () => {
     const [filter,getFilter]=useState(false);
     return (
-        <div className='flx-row filter -translate-x-[300px] h-screen'>
+        <div className='flx-row filter absolute -translate-x-[300px] h-screen'>
             <div className='w-[300px] bg-light h-full z-10 py-10 px-5 flx-col gap-5 overflow-y-auto flex-shrink-0'>
                 <div className='flx-row text-xl'>
                     <TbFilterEdit className='text-3xl '/>&nbsp;&nbsp;<b className='text-slate-500'>FILTERS</b>
@@ -39,7 +39,7 @@ const Filter = () => {
                 <button className='primary-btn w-full'>Apply Filter</button>
             </div>
             <div className=''>
-                <button className='w-[70px] h-[70px] rounded-full justify-end bg-primary text-light text-xl flx-row p-5  -translate-x-7 ' onClick={()=>{
+                <button className='absolute w-[70px] h-[70px] rounded-full justify-end bg-primary text-light text-xl flx-row p-5  -translate-x-7 ' onClick={()=>{
                     if(filter){
                         document.querySelector('.filter').classList.add('-translate-x-[300px]')
                         getFilter(false);

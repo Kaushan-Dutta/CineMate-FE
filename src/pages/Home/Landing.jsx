@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect ,Suspense,lazy} from 'react'
 
 import SearchBar from '../../components/SearchBar';
 import { BsArrowRightCircle } from 'react-icons/bs';
 
 import { Category, Gallery, Section } from '../Static';
-import Flower from '../../assets/flower.svg'
+
+const CategoryClass = lazy(() => import("./CategoryClass"));
+const GalleryClass = lazy(() => import("./GalleryClass"));
 
 const Landing = () => {
 
@@ -22,19 +24,11 @@ const Landing = () => {
 
           </div>
         </section>
-        {/* <section className='base-container flx-col gap-5'>
-          <p className='text-3xl text-[#424242] '>UNLOCK YOUR INNER <span className='text-shade2'>CREATOR</span></p>
-          <p className='text-xl text-[#777777]'>Get the inspiration you need with these collections carefully selected to boost your project’s engagement.</p>
-          <div className='flx-row justify-between overflow-hidden overflow-x-auto space-x-10 my-10'>
-            {Category.map((obj, id) => (
-              <div key={id} className='w-[300px] h-[370px] rounded-xl flex-shrink-0 cursor-pointer overflow-hidden transition-all ease-out duration-300 '  >
-                <img src={obj.image} className='  w-full h-full hover:scale-105' />
-                <p className={`relative  tracking-widest text-white text-xl  ${obj.className}`}><b>{obj.name}</b></p>
-              </div>
-            ))}
-          </div>
-        </section> */}
-        <section className='primary-container flx-col gap-5 text-center'>
+        
+        <Suspense>
+          <CategoryClass/>
+        </Suspense>
+        <section className='base-container flx-col gap-5 text-center'>
           <p className='text-3xl text-[#424242]'>THE <span className='text-primary'>SMARTEST CHOICE</span> FOR CREATIVES LIKE YOU</p>
           <p className='text-xl text-[#777777]'>Whether you’re looking for designs or photographs, you’ll find the perfect asset on Freepik.</p>
           <div className='flx-row justify-between flex-wrap my-10'>
@@ -47,15 +41,9 @@ const Landing = () => {
             ))}
           </div>
         </section>
-        {/* <section className='primary-container flx-col gap-5'>
-          <p className='text-3xl text-[#424242] '>UNLOCK YOUR INNER <span className='text-shade2'>CREATOR</span></p>
-          <p className='text-xl text-[#777777]'>Get the inspiration you need with these collections carefully selected to boost your project’s engagement.</p>
-          <div className='grid grid-cols-2 md:grid-cols-4  gap-5 my-10'>
-            {Gallery.map((obj, id) => (
-              <video autoPlay muted loop className={obj.className} key={id}><source src={obj.video} type="video/mp4" /></video>
-            ))}
-          </div>
-        </section> */}
+        <Suspense>
+          <GalleryClass/>
+        </Suspense>
         <section className='base-container '>
           <div className=' bg-light rounded-3xl flx-row flex-wrap justify-between md:p-20 p-5'>
             <div className='md:w-full lg:w-2/5 text-left flx-col gap-5 my-5'>

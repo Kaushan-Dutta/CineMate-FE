@@ -1,8 +1,8 @@
-import React from 'react'
+import React,{Suspense,lazy} from 'react'
 import {Routes,Route} from 'react-router-dom';
 
 import Landing from './pages/Home/Landing';
-import Gallery from './pages/Content/Gallery';
+import Gallery from "./pages/Content/Gallery";
 import Content from './pages/Content/Content';
 
 import Pricing from './pages/Home/Pricing'
@@ -34,7 +34,10 @@ const App = () => {
               <Route path="/pricing" element={<Pricing/>}/>
 
               <Route path="/search" element={<ContentWrapper/>}>
-                  <Route index element={<Gallery/>}/>
+                  <Route index element={
+                         <Gallery/>
+                  }/>
+                
                   <Route path=":id" element={<Content/>}/>
               </Route>
               <Route path="/:username" element={<Profile/>}/>
