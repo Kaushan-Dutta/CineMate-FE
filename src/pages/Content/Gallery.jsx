@@ -28,8 +28,8 @@ const Gallery = () => {
                     gallery?.data?.getContents?.map((obj,id)=>{
                         //console.log(obj);
                         return(
-                        <div key={id} className='m-5   overflow-hidden ' >
-                            <video autoPlay muted loop className='w-[400px] ' >
+                        <div key={id} className='m-5   overflow-hidden '  loading="lazy" >
+                            <video autoPlay muted loop className='w-[400px] '>
                                 <source src={obj.url} type="video/mp4" />
                             </video>
                             <p className='relative -translate-y-10 px-5  text-white text-md hover:text-shade1' onClick={()=>{navigate(obj._id)}}><b>{obj.type}</b></p>                    

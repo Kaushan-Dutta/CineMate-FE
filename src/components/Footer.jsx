@@ -13,24 +13,24 @@ import { FaLinkedinIn } from 'react-icons/fa6';
 const Social=[
     {
         icon:<FaLinkedinIn/>,
-        link:''
+        link:'https://kaushan-dutta.vercel.app/'
     },
     {
         icon:<FaFacebookF/>,
-        link:''
+        link:'https://kaushan-dutta.vercel.app/'
     },
     {
         icon:<FaInstagram/>,
-        link:''
+        link:'https://kaushan-dutta.vercel.app/'
     },
     {
         icon:<FaTwitter/>,
-        link:''
+        link:'https://kaushan-dutta.vercel.app/'
     },
     
     {
         icon:<SiHashnode/>,
-        link:''
+        link:'https://kaushan-dutta.vercel.app/'
     },
     
 ]

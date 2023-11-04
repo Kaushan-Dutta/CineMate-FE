@@ -95,7 +95,7 @@ export const Section=[
     {
         image:Create,
         title:'Create videos',
-        link:`/${window.localStorage.token?'user':'testmode'}/create`
+        link:`/create`
     },
     {
         image:Blog,

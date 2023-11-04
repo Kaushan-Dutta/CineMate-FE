@@ -7,6 +7,7 @@ import { Category, Gallery, Section } from '../Static';
 
 const CategoryClass = lazy(() => import("./CategoryClass"));
 const GalleryClass = lazy(() => import("./GalleryClass"));
+import { Link } from 'react-router-dom';
 
 const Landing = () => {
 
@@ -28,7 +29,7 @@ const Landing = () => {
         <Suspense>
           <CategoryClass/>
         </Suspense>
-        <section className='base-container flx-col gap-5 text-center'>
+        <section className='primary-container flx-col gap-5 text-center'>
           <p className='text-3xl text-[#424242]'>THE <span className='text-primary'>SMARTEST CHOICE</span> FOR CREATIVES LIKE YOU</p>
           <p className='text-xl text-[#777777]'>Whether you’re looking for designs or photographs, you’ll find the perfect asset on Freepik.</p>
           <div className='flx-row justify-between flex-wrap my-10'>
@@ -49,7 +50,7 @@ const Landing = () => {
             <div className='md:w-full lg:w-2/5 text-left flx-col gap-5 my-5'>
               <p className='text-5xl text-theme'>Join CineMate’s <span className='text-shade1'>creator</span> community</p>
               <p className='text-lg'>Behind every stock image, there’s a creative mind. You can also create content and sell it on CineMate</p>
-              <button className='primary-btn w-[200px] test-white '>Collection</button>
+              <Link className='primary-btn w-[200px] test-white ' to="/search">Collection</Link>
             </div>
             <div className='lg:w-[500px] md:w-full my-5'>
               <img src="https://www.videvo.net/images/home/home-1.jpg " className='w-full' />

@@ -6,7 +6,7 @@ const Plans=()=>{
     return (
         <>
         {SubscribePlans.map((obj,id)=>(
-            <div className='h-[600px] m-5 p-10 border border-primary rounded-md hover:shadow-md w-[350px] flx-col gap-5 bg-[#ffff] text-[#424242]'>
+            <div key={id} className='h-[600px] m-5 p-10 border border-primary rounded-md hover:shadow-md w-[350px] flx-col gap-5 bg-[#ffff] text-[#424242]'>
                 <div className='text-center'>
                     <p className='text-4xl '><b>{obj.plan} Plan</b></p>
                 </div>
@@ -24,8 +24,8 @@ const Plans=()=>{
                     <p className='text-black'><b>Discover</b></p>
                 </div>
                 <div className=''>
-                    {obj.discover.map(element => (
-                       <p>✔&nbsp;&nbsp;{element}</p> 
+                    {obj.discover.map((element,id) => (
+                       <p key={id}>✔&nbsp;&nbsp;{element}</p> 
                     ))}
                     
                 </div>

@@ -10,7 +10,7 @@ const SearchBar = () => {
   const [search,setSearch]=useState('');
   return (
     <div className='w-full pr-10  flx-row justify-center bg-light font-inter h-[60px] text-black rounded-md'>
-        <div className='w-1/5  h-full'>
+        <div className='w-2/5 md:w-1/5   h-full'>
             <select className="w-full h-full  outline-none bg-light rounded-md px-5" id="category">
             {
                 Categories.map((item,index)=>(
