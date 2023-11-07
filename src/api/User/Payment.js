@@ -26,7 +26,7 @@ export const Payment = () => {
             return;
         }
     
-        const result = await axios.post("https://cine-mate-be.vercel.app/user/payment");
+        const result = await axios.post(`${import.meta.env.VITE_APP_BACKENED_URL}user/payment`);
     
         if (!result) {
             alert("Server error. Are you online?");

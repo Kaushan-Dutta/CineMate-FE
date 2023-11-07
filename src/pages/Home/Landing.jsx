@@ -2,8 +2,9 @@ import React, { useState, useEffect ,Suspense,lazy} from 'react'
 
 import SearchBar from '../../components/SearchBar';
 import { BsArrowRightCircle } from 'react-icons/bs';
-
+import axios from 'axios';
 import { Category, Gallery, Section } from '../Static';
+import toast from 'react-hot-toast';
 
 const CategoryClass = lazy(() => import("./CategoryClass"));
 const GalleryClass = lazy(() => import("./GalleryClass"));
@@ -11,7 +12,21 @@ import { Link } from 'react-router-dom';
 
 const Landing = () => {
 
-  const array = [1, 2, 3, 4]
+  const [email,setEmail]=useState();
+
+  const handleSubmit = async(e) => {
+    e.preventDefault();
+
+    console.log(email);
+    try{
+      await axios.post(`${import.meta.env.VITE_APP_BACKENED_URL}user/subscribe`,{email});
+      toast.success("Subscribed Successfully")}
+    catch(err){
+      
+      toast.error("Not Subscribed");
+    }
+
+  }  
   return (
     <>
       <div className='font-inter'>
@@ -61,8 +76,9 @@ const Landing = () => {
           <div className=' bg-primary rounded-3xl flx-col justify-center gap-5 text-center md:p-20 p-5'>
             <p className='text-5xl text-extra_light'>Sign Up our<span className='text-shade2'> Newsletter</span></p>
             <p className='text-xl text-white md:w-[70%] w-full mx-auto'>Lorem ipsum dolor sit amet consectetur adipisicing elit. accusantium quos temporibus adipisci mollitia veritatis iure!</p>
-            <form className='flx-row justify-between bg-light my-10 h-[70px] p-5 rounded-full mx-auto w-[90%] md:w-[50%] '>
-              <input type="text" placeholder='Sign Up our newsletter' className=' px-5 py-2 w-full bg-light' /><button className="primary-btn w-[150px]" type="submit">Submit</button>
+            <form className='flx-row justify-between bg-light my-10 h-[70px] p-5 rounded-full mx-auto w-[90%] md:w-[50%] ' onSubmit={handleSubmit}>
+              <input type="email" placeholder='Sign Up our newsletter' className=' px-5 py-2 w-full bg-light' onChange={(e)=>setEmail(e.target.value)}/>
+              <button className="primary-btn w-[150px]" type="submit">Submit</button>
             </form>
           </div>
         </section>
