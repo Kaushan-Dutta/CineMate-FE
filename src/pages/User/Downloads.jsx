@@ -1,13 +1,16 @@
 import React,{useEffect} from 'react';
 import Download from '../../api/User/Downloads';
+import { userData } from '../../context/UserProvider';
 
 const Downloads=()=>{
-    const array=[1,2,3,4.5]
     const {downloads}=Download();
+    const {profile}=userData();
+
 
     useEffect(()=>{
         const loadContents=async()=>{
-            console.log(downloads)
+            console.log(downloads,profile)
+
         }
         loadContents();
     },[])
@@ -16,7 +19,7 @@ const Downloads=()=>{
         <>
             <div className="">
                 <p className="text-lg text-primary tracking-widest"><b>DOWNLOADS/</b></p>
-                <p className='text-2xl text-slate-600'>{window.location.pathname.split('/')[1]}</p>
+                <p className='text-2xl text-slate-600'>{profile?.email.split('@')[0]}</p>
             </div>
             <div className=' text-center'>
                 <h1 className='my-10 text-2xl text-primary tracking-widest'><b>Your Downloads</b></h1>
