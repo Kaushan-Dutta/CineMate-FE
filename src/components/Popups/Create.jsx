@@ -31,7 +31,7 @@ const Create = () => {
       useReactMediaRecorder({ video: true });
       
       return (
-        <div className='popup-window primary-container font-inter '>
+        <div className='popup-window primary-container font-inter'>
           <div className='w-full rounded-md p-5 bg-light font-inter flx-col gap-5'>
             <div className='flx-row justify-end text-theme'>
               <button onClick={()=>{setRecoder(false)}}><ImCross/></button>
@@ -45,9 +45,9 @@ const Create = () => {
                       height="250px"
                       screenshotFormat="image/jpeg"
                   />
-                  <div className='flx-row justify-center space-x-5 md:my-4 my-2'>
-                      <button onClick={startRecording} className={`text-3xl md:text-5xl text-primary hover:text-red-700 ${status=='recording'?'text-red-700':''}`}><FaDotCircle/></button>
-                      <button onClick={stopRecording}  className='text-3xl md:text-5xl text-primary hover:text-red-700'><AiFillPlayCircle/></button>
+                  <div className='flx-row justify-center space-x-5 my-4'>
+                      <button onClick={startRecording} className={`text-5xl text-primary hover:text-red-700 ${status=='recording'?'text-red-700':''}`}><FaDotCircle/></button>
+                      <button onClick={stopRecording}  className='text-5xl text-primary hover:text-red-700'><AiFillPlayCircle/></button>
                   </div>
 
                 </div>
