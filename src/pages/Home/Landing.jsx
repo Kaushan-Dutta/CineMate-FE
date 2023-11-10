@@ -2,9 +2,13 @@ import React, { useState, useEffect ,Suspense,lazy} from 'react'
 
 import SearchBar from '../../components/SearchBar';
 import { BsArrowRightCircle } from 'react-icons/bs';
+
+
 import axios from 'axios';
-import { Category, Gallery, Section } from '../Static';
+import { Category, Gallery, Section,Desktop } from '../Static';
 import toast from 'react-hot-toast';
+
+
 
 const CategoryClass = lazy(() => import("./CategoryClass"));
 const GalleryClass = lazy(() => import("./GalleryClass"));
@@ -49,7 +53,7 @@ const Landing = () => {
           <p className='text-xl text-[#777777]'>Whether you’re looking for designs or photographs, you’ll find the perfect asset on Freepik.</p>
           <div className='flx-row justify-between flex-wrap my-10'>
             {Section.map((item, index) => (
-              <div key={index} className='bg-light rounded-lg w-[400px] h-[100px] flx-row justify-between space-x-5 px-6 hover:shadow-lg m-5'>
+              <div key={index} className='bg-light rounded-lg w-[380px] h-[100px] flx-row justify-between space-x-5 px-6 hover:shadow-lg m-5'>
                 <img src={item.image} className='w-[40px]' />
                 <p className='text-primary text-md '><b>{item.title}</b></p>
                 <a href={item.link}><BsArrowRightCircle className='text-3xl text-[#424242]' /></a>
@@ -63,15 +67,21 @@ const Landing = () => {
         <section className='base-container '>
           <div className=' bg-light rounded-3xl flx-row flex-wrap justify-between md:p-20 p-5'>
             <div className='md:w-full lg:w-2/5 text-left flx-col gap-5 my-5'>
-              <p className='text-5xl text-theme'>Join CineMate’s <span className='text-shade1'>creator</span> community</p>
-              <p className='text-lg'>Behind every stock image, there’s a creative mind. You can also create content and sell it on CineMate</p>
-              <Link className='primary-btn w-[200px] test-white ' to="/search">Collection</Link>
+              <p className='text-5xl text-theme'>Get <span className='text-shade1'>Desktop</span> version</p>
+              <p className='text-lg'>Get and upload your content in offline mode, also with customized video creation</p>
+              <div className='flx-row   gap-5 flex-wrap'>
+                  {
+                    Desktop.map((item,index)=>(
+                    <button key={index} className=' flx-row  gap-5'><img src={item.image} className=' rounded-full flx-row p-1 bg-extra_light' /><Link className='underline hover:text-primary'>Click Here </Link></button>
+                  ))}
+              </div>
             </div>
             <div className='lg:w-[500px] md:w-full my-5'>
               <img src="https://www.videvo.net/images/home/home-1.jpg " className='w-full' />
             </div>
           </div>
         </section>
+       
         <section className='base-container '>
           <div className=' bg-primary rounded-3xl flx-col justify-center gap-5 text-center md:p-20 p-5'>
             <p className='text-5xl text-extra_light'>Sign Up our<span className='text-shade2'> Newsletter</span></p>

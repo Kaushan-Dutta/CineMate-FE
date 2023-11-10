@@ -4,6 +4,9 @@ import Video from '../assets/video.png';
 import Create from '../assets/create.png';
 import Blog from '../assets/blog.png';
 import Price from  "../assets/price.png";
+import Windows from '../assets/windows.png';
+import Mac from '../assets/mac.png';
+import Linux from '../assets/linux.png';
 
 export const SubscribePlans=[
     {
@@ -119,3 +122,17 @@ export const Filters=[
     },
     
 ];
+export const Desktop=[
+    {
+        image:Windows,
+        link:''
+    },
+    {
+        image:Mac,
+        link:''
+    },
+    {
+        image:Linux,
+        link:''
+    }
+]
