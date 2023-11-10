@@ -32,12 +32,12 @@ const Create = () => {
       
       return (
         <div className='popup-window primary-container font-inter'>
-          <div className='w-full rounded-md p-5 bg-light font-inter flx-col gap-5'>
+          <div className='w-full rounded-md p-3 md:p-5 bg-light font-inter flx-col '>
             <div className='flx-row justify-end text-theme'>
               <button onClick={()=>{setRecoder(false)}}><ImCross/></button>
             </div>
-            <div className='flx-row justify-around  flex-wrap md:space-x-10 '>
-                <div className='flx-col'>
+            <div className='flx-row justify-around  flex-wrap md:space-x-10 my-1'>
+                <div className={`flx-col `}>
                   <Webcam
                       audio={false}
                       ref={webcamRef}
@@ -45,14 +45,14 @@ const Create = () => {
                       height="250px"
                       screenshotFormat="image/jpeg"
                   />
-                  <div className='flx-row justify-center space-x-5 my-4'>
-                      <button onClick={startRecording} className={`text-5xl text-primary hover:text-red-700 ${status=='recording'?'text-red-700':''}`}><FaDotCircle/></button>
-                      <button onClick={stopRecording}  className='text-5xl text-primary hover:text-red-700'><AiFillPlayCircle/></button>
+                  <div className='flx-row justify-center space-x-5 md:my-4 my-2'>
+                      <button onClick={startRecording} className={`text-4xl md:text-5xl text-primary hover:text-red-700 ${status=='recording'?'text-red-700':''}`}><FaDotCircle/></button>
+                      <button onClick={stopRecording}  className='text-4xl md:text-5xl text-primary hover:text-red-700'><AiFillPlayCircle/></button>
                   </div>
 
                 </div>
                 {mediaBlobUrl &&
-                  <div className='flx-col realative -translate-y-1  gap-5'>
+                  <div className='flx-col realative -translate-y-1  gap-5 '>
                         <video src={mediaBlobUrl} controls autoPlay width="500px"
                         height="250px" />
                 <button className='mx-auto primary-btn-sqr w-[200px] text-center text-lg ' onClick={()=>setRecoder(true)}><b>Record</b></button>
