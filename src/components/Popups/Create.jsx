@@ -10,6 +10,9 @@ import { FaDotCircle } from 'react-icons/fa';
 import { AiFillPlayCircle } from 'react-icons/ai';
 import Loader from '../Loader';
 
+const Record=async()=>{
+
+}
 const Create = () => {
   const [popup,setPopup]=useState(false);
   const {loading,createList,content,setContent,uploadContent} =CreateContent();
@@ -32,11 +35,11 @@ const Create = () => {
       
       return (
         <div className='popup-window primary-container font-inter'>
-          <div className='w-full rounded-md p-3 md:p-5 bg-light font-inter flx-col '>
-            <div className='flx-row justify-end text-theme'>
+          <div className='w-full rounded-md p-5  bg-light font-inter flx-col '>
+            <div className='flx-row justify-end text-theme mb-3'>
               <button onClick={()=>{setRecoder(false)}}><ImCross/></button>
             </div>
-            <div className='flx-row justify-around  flex-wrap md:space-x-10 my-1'>
+            <div className='flx-row justify-around overflow-x-auto  space-x-10 '>
                 <div className={`flx-col `}>
                   <Webcam
                       audio={false}
@@ -45,9 +48,9 @@ const Create = () => {
                       height="250px"
                       screenshotFormat="image/jpeg"
                   />
-                  <div className='flx-row justify-center space-x-5 md:my-4 my-2'>
-                      <button onClick={startRecording} className={`text-4xl md:text-5xl text-primary hover:text-red-700 ${status=='recording'?'text-red-700':''}`}><FaDotCircle/></button>
-                      <button onClick={stopRecording}  className='text-4xl md:text-5xl text-primary hover:text-red-700'><AiFillPlayCircle/></button>
+                  <div className='flx-row justify-center space-x-5 my-4 '>
+                      <button onClick={startRecording} className={`text-5xl text-primary hover:text-red-700 ${status=='recording'?'text-red-700':''}`}><FaDotCircle/></button>
+                      <button onClick={stopRecording}  className='text-5xl text-primary hover:text-red-700'><AiFillPlayCircle/></button>
                   </div>
 
                 </div>
@@ -90,8 +93,8 @@ const Create = () => {
                <p className='text-5xl text-primary flx-row justify-center'><RiGalleryFill/></p>
                <p className='text-lg font-mono'><b>{content?.name?content.name:'Upload Video mp4/mp3'}</b></p>
             </div>
-            <p>OR</p>
-            <div className='mx-auto'>
+            <p className='hidden md:flex justify-center'>OR</p>
+            <div className='mx-auto hidden md:flex'>
                 <button className='primary-btn-sqr w-[200px] text-center text-lg ' onClick={()=>setRecoder(true)}><b>Record</b></button>
             </div>
         </div>
