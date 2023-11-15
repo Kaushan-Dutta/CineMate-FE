@@ -7,7 +7,7 @@ const UserWrapper = () => {
 
   const { isLoading,user} = useAuth0();  
   const [profile,setProfile]=useState();
-
+  
 
   if (isLoading ) return <Loader/>
   if(!user){

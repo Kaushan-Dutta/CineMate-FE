@@ -12,32 +12,32 @@ import { HiOutlineHeart } from 'react-icons/hi';
 export const Categories=[
     {
         name:"All",
-        query:"/",
+        query:"",
         icon:<PiShapesLight/>,
     },
     {
         name:"Sports",
-        query:"sports",
+        query:"Sports",
         icon:<MdSportsGymnastics/>,
     },
     {
         name:"Nature",
-        query:"nature",
+        query:"Nature",
         icon:<MdOutlineEmojiNature/>,
     },
     {
         name:"People",
-        query:"people",
+        query:"People",
         icon:<BsPeopleFill/>,
     },
     {
         name:"Technology",
-        query:"tech",
+        query:"Technology",
         icon:<MdBiotech/>,
     },
     {
         name:"Events",
-        query:"events",
+        query:"Events",
         icon:<MdOutlineEmojiEvents/>,
     }
 ]

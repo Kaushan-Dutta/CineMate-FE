@@ -8,11 +8,11 @@ const Downloads=()=>{
 
 
     useEffect(()=>{
-        const loadContents=async()=>{
+       const loadContents=async()=>{
             console.log(downloads,profile)
 
         }
-        loadContents();
+        loadContents(); 
     },[])
 
     return(

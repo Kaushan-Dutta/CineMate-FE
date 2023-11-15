@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 import toast from 'react-hot-toast'
 import Favourites from '../../api/User/Favourites';
 import Downloads from '../../api/User/Downloads';
-
+import AddCollection from '../../components/Popups/AddCollection';
 
 const get_content = gql`
   query GetContent($id:String!) {
@@ -31,6 +31,8 @@ const Content = () => {
     const [video,setVideo]=useState();
     const {AddFavourites}=Favourites();
     const {AddDownloads}=Downloads();
+    const [popup,setPopup]=useState(false);
+
 
     const { refetch } = useQuery(get_content);
     useEffect(()=>{
@@ -63,7 +65,7 @@ const Content = () => {
 
                         <BsDownload className='cursor-pointer hover:text-black' onClick={handleDownload}/>
 
-                        <MdOutlineCollections className='cursor-pointer hover:text-black' />
+                        <MdOutlineCollections className='cursor-pointer hover:text-black' onClick={()=>setPopup(true)}/>
                         <BsShare className='cursor-pointer hover:text-black' onClick={()=>{navigator.clipboard.writeText(window.location.href);toast.success("URL Copied")}}/>
 
                         <HiOutlineHeart className='cursor-pointer hover:text-black' onClick={handleFavourite}/>
@@ -76,6 +78,7 @@ const Content = () => {
                     <button className='mx-auto flx-row justify-center w-[250px] p-3 text-lg rounded-lg text-white bg-shade1' onClick={handleDownload}><BsDownload/>&nbsp;&nbsp;<b>Download</b></button>
                 </div>
             </div>
+            {popup && <AddCollection setPopup={setPopup}/>}
         </div>
     )
 }
