@@ -14,7 +14,7 @@ if (process.env.NODE_ENV !== "production") {  // Adds messages only in a dev env
   loadErrorMessages();
 }
 const client = new ApolloClient({
-  uri: 'https://cine-mate-be.vercel.app/graphql',
+  uri: `${import.meta.env.VITE_APP_BACKENED_URL}graphql`,
   cache: new InMemoryCache(),
 });
 
